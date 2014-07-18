@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+/*Un numero è divisibile per 3 se la somma delle sue cifre è 3 o un suo multiplo.
+Nel caso tale somma sia un numero maggiore di 9, si può eseguire di nuovo l'operazione.
+Quindi ad esempio da 493827 si ottiene 33 e da qui 6. 
+Il risultato è pari al resto modulo 9, e se lo si divide per 3 si può anche ottenere il resto modulo 3; 
+inoltre non è necessario sommare le eventuali cifre divisibili per 3 (ossia 0, 3, 6, 9) presenti nel numero.
+Ad esempio, per verificare se 32565 è divisible per 3 basta eseguire la somma 2+5+5 = 12. 
+Dato che 12 è divisibile per 3, allora anche 32565 lo è. */
+
+int main()
+{
+	printf("          *****************************************************          \n"); //parte 
+	printf("          Programma per calcolare se un numero è multiplo di 3!          \n"); //pseudo
+	printf("          *****************************************************          \n"); //grafica  
+	printf("\n");
+	printf("\n");
+	int multiplo_tutto; //variabile che contiene il numero da verificare
+	printf("Inserisci il multiplo di 3 da verificare: ");
+	scanf("%d",&multiplo_tutto);
+	int numeri[5]; //array che conterrà le cifre
+	printf("Inserisci cifra per cifra il multiplo di 3 che vuoi calcolare (numeri massimo di 5 cifre)\n");
+	printf("                    TIP: Sono un newbie ed il programma chiede sempre 5 cifre in ogni caso, pertanto se il numero che vuoi calcolare ne contiene di                        meno, inserisci 0 alla richiesta delle cifre superflue          \n");
+	printf("Cifra 1: ");
+	scanf("%d",&numeri[0]);
+	printf("cifra 2: ");
+	scanf("%d",&numeri[1]);
+	printf("Cifra 3: ");
+	scanf("%d",&numeri[2]);
+	printf("Cifra 4: ");
+	scanf("%d",&numeri[3]);
+	printf("Cifra 5: ");
+	scanf("%d",&numeri[4]);
+	int risultato_somma_cifre = numeri[0] + numeri[1] + numeri[2] + numeri[3] + numeri[4]; //variabile che contiene la somma di tutte le cifre
+	if(risultato_somma_cifre % 3==0) {
+		printf("Complimenti, %d è un multiplo di 3!\n",multiplo_tutto);
+	}
+	if(risultato_somma_cifre % 3 != 0) {
+		printf("Mi dispiace ma %d NON è un multiplo di 3\n",multiplo_tutto);
+	}
+	return 0;
+}
